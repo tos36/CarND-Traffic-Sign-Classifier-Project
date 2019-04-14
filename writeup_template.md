@@ -30,8 +30,14 @@ The goals / steps of this project are the following:
 [image8]: ./mydata/3.jpg "Traffic Sign 3"
 [image9]: ./mydata/4.jpg "Traffic Sign 4"
 [image10]: ./mydata/5.jpg "Traffic Sign 5"
-[image11]: ./mydata/5.jpg "Traffic Sign 6"
+[image11]: ./mydata/6.jpg "Traffic Sign 6"
 
+[image12]: ./examples/1_result.png "Result 1"
+[image13]: ./examples/2_result.png "Result 2"
+[image14]: ./examples/3_result.png "Result 3"
+[image15]: ./examples/4_result.png "Result 4"
+[image16]: ./examples/5_result.png "Result 5"
+[image17]: ./examples/6_result.png "Result 6"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
