@@ -30,14 +30,12 @@ The goals / steps of this project are the following:
 [image8]: ./mydata/3.jpg "Traffic Sign 3"
 [image9]: ./mydata/4.jpg "Traffic Sign 4"
 [image10]: ./mydata/5.jpg "Traffic Sign 5"
-[image11]: ./mydata/6.jpg "Traffic Sign 6"
 
 [image12]: ./examples/1_result.png "Result 1"
 [image13]: ./examples/2_result.png "Result 2"
 [image14]: ./examples/3_result.png "Result 3"
 [image15]: ./examples/4_result.png "Result 4"
 [image16]: ./examples/5_result.png "Result 5"
-[image17]: ./examples/6_result.png "Result 6"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -136,10 +134,23 @@ My final model results were:
 
 I tried with some parameters. Followings are summary of it.
  - epoch:10, lr:0.005, accuracy 0.91, accuracy fluctuated
- - epoch:10, lr:0.001, accuracy 0.90, accuracy fluctuated  
+ - epoch:10, lr:0.001, accuracy 0.90 
  - epoch:10, lr:0.002, dropout:0.5 , accuracy 0.94   
  - epoch:25, lr:0.002, dropout:0.5 , accuracy 0.96   
  - epoch:40, lr:0.002, dropout:0.5 , accuracy 0.95
+ 
+I first tried with learning rate as 0.005 and got an accuracy as 0.91, but the validation accuracy for each epoch is still fluctuated. I assume that the learning rate is too high.
+
+Then I lowered the learning rate as 0.001. The accuracy was convergenced, but I the validation accuracy was still low, 0.90. I assume this is the model was overfitted.
+
+I added dropout to each fully connected layers and the accuracy hit 0.94.
+
+I increased the number of epochs and the accuracy get better until 20-30.
+
+Finnaly I choosed the parameters discribed above.
+
+
+
 
 If a well known architecture was chosen:
 * What architecture was chosen? :Lenet
@@ -157,9 +168,12 @@ If a well known architecture was chosen:
 Here are five German traffic signs that I found on the web:
 
 ![alt text][image6] ![alt text][image7] ![alt text][image8] 
-![alt text][image9] ![alt text][image10] ![alt text][image11]
+![alt text][image9] ![alt text][image10]
 
-The first image might be difficult to classify because ...
+The first and fourth image might be difficult to classify because they tilts diagonally.
+The second image might be difficult because the contrast is a little low.
+The third one might be difficult because the sighn is bended.
+The last one might be difficult because it is dirty.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -172,26 +186,22 @@ Here are the results of the prediction:
 | No vehicles					| No vehicles				|
 | 30 km/h	      		| 30 km/h	      		|
 | General caution			| General caution			|
-| No toilets		| Priority road			|
 
 
-The model was able to correctly guess 5 of the 6 traffic signs, which gives an accuracy of 88%. 
+The model was able to correctly guess 5 of the 6 traffic signs, which gives an accuracy of 100%.
+This is higer than the result I got in the test set. The model seems to work well if the sign is large enough.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
-For the first 5 image, the model is relatively sure that this is a stop sign (probability of > 0.99)
+The model is relatively sure that this is a stop sign (probability of > 0.99)
 ![alt text][image12]
 ![alt text][image13]
 ![alt text][image14]
 ![alt text][image15]
 ![alt text][image16]
 
-
-For the last image, this is not a general traffic sign, but we need to set another class like "unknown" to avlid misclassification for this kind of edge cases.
-
-![alt text][image17]
 
 
 
