@@ -30,6 +30,7 @@ The goals / steps of this project are the following:
 [image8]: ./mydata/3.jpg "Traffic Sign 3"
 [image9]: ./mydata/4.jpg "Traffic Sign 4"
 [image10]: ./mydata/5.jpg "Traffic Sign 5"
+[image11]: ./mydata/5.jpg "Traffic Sign 6"
 
 
 ## Rubric Points
@@ -127,6 +128,13 @@ My final model results were:
 * Max validation set accuracy of 0.961 
 * test set accuracy of 0.938
 
+I tried with some parameters. Followings are summary of it.
+ - epoch:10, lr:0.005, accuracy 0.91, accuracy fluctuated
+ - epoch:10, lr:0.001, accuracy 0.90, accuracy fluctuated  
+ - epoch:10, lr:0.002, dropout:0.5 , accuracy 0.94   
+ - epoch:25, lr:0.002, dropout:0.5 , accuracy 0.96   
+ - epoch:40, lr:0.002, dropout:0.5 , accuracy 0.95
+
 If a well known architecture was chosen:
 * What architecture was chosen? :Lenet
 * Why did you believe it would be relevant to the traffic sign application? 
@@ -142,8 +150,8 @@ If a well known architecture was chosen:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image6] ![alt text][image7] ![alt text][image8] 
+![alt text][image9] ![alt text][image10] ![alt text][image11]
 
 The first image might be difficult to classify because ...
 
@@ -153,33 +161,31 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Roundabout mandatory      		| Roundabout mandatory	| 
+| Priority road    			| Priority road    				|
+| No vehicles					| No vehicles				|
+| 30 km/h	      		| 30 km/h	      		|
+| General caution			| General caution			|
+| No toilets		| Priority road			|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 5 of the 6 traffic signs, which gives an accuracy of 88%. 
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+For the first 5 image, the model is relatively sure that this is a stop sign (probability of > 0.99)
+![alt text][image12]
+![alt text][image13]
+![alt text][image14]
+![alt text][image15]
+![alt text][image16]
 
 
-For the second image ... 
+For the last image, this is not a general traffic sign, but we need to set another class like "unknown" to avlid misclassification for this kind of edge cases.
 
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+![alt text][image17]
+
 
 
