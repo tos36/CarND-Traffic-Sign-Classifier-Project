@@ -18,17 +18,19 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./mydata/hist_train.png "Training dataset"
-[image2]: ./mydata/hist_valid.png "Validation dataset"
-[image3]: ./mydata/hist_test.png "Test dataset"
-[image4]: ./mydata/color_image.png "Before processing"
-[image5]: ./mydata/gray_image.png "After processing"
+[image1]: ./examples/hist_train.png "Training dataset"
+[image2]: ./examples/hist_valid.png "Validation dataset"
+[image3]: ./examples/hist_test.png "Test dataset"
+[image4]: ./examples/color_image.png "Before processing"
+[image5]: ./examples/gray_image.png "After processing"
 
 
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image6]: ./mydata/1.jpg "Traffic Sign 1"
+[image7]: ./mydata/2.jpg "Traffic Sign 2"
+[image8]: ./mydata/3.jpg "Traffic Sign 3"
+[image9]: ./mydata/4.jpg "Traffic Sign 4"
+[image10]: ./mydata/5.jpg "Traffic Sign 5"
+
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -112,25 +114,26 @@ My final model consisted of the following layers:
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 To train the model, I used an ....
+- AdamOptimizer as a optimizer
+- softmax cross entropy with logits as an loss function
+- Batch_size: 128
+- Epoch: 30
+- learning rate: 0.002
+- Drop out probability: 0.5
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
-
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+* Max validation set accuracy of 0.961 
+* test set accuracy of 0.938
 
 If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
+* What architecture was chosen? :Lenet
+* Why did you believe it would be relevant to the traffic sign application? 
+:It wroks well in MNIST task. I started with LeNet since the image is simple and the number of class is not big in this project.
+
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+: The accuracy for validation dataset is 96% and the one for test dataset is 93%. This prove the model is working well.
  
 
 ### Test a Model on New Images
